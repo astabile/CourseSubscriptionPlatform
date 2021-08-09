@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/courses', 'CourseController');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/courses', 'CourseController@index');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
