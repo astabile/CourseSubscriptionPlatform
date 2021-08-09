@@ -14,7 +14,11 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return view('courses.index');
+
+        // Get last courses
+        $courses = Course::latest()->paginate(8);
+
+        return view('courses.index', compact('courses'));
     }
 
     /**
