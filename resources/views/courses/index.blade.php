@@ -1,33 +1,19 @@
 @extends('layouts.app')
 
-@section('styles')
-@endsection
-
 @section('content')
-@php $currency = 'USD' @endphp
-<div class="container">
-    <div class="row mx-auto">
-        @if (count($courses) > 0)
-        @foreach($courses as $course)
-        <div class="col-md-3 mb-4">
-            <div class="card shadow">
-                <img src="/storage/{{ $course->picture }}" class="card-img-top" title="{{ Str::ucfirst($course->title) }}" alt="">
-                <div class="card-body">
-                    <h6 class="card-title font-weight-bold">{{ Str::ucfirst($course->title) }}</h6>
-                    <div class="meta-course d-flex justify-content-between">
-                        <p class="text-primary date">{{ $course->created_at->format('m/d/Y') }}</p>
-                        <p class="text-secondary">{{ $currency . $course->price }}</p>
-                    </div>
-                    <subscription-button course-id="{{ $course->id }}" subscribed="{{ $subscribed }}"></subscription-button>
-                </div>
-            </div>
-        </div>
-        @endforeach
-        @else
-        <p class="text-center w-100">No courses yet..</p>
-        @endif
+<div class="col-md-10 mx-auto bg-white p-3">
+    @if(count($user->subscriptions) > 0)
+    <h2 class="text-center my-5">My courses</h2>
+    <div class="col-md-10 mx-auto bg-white p-3">
+        <ul class="list-group">
+            @foreach($user->subscriptions as $course)
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>{{ $course->title }}</p>
+                <a class="btn btn-outline-success text-uppercase font-weight-bold" href="{{ route('courses.show', $course->id) }}">View</a>
+            </li>
+            @endforeach
+        </ul>
     </div>
+    @endif
 </div>
-
-<div class="col-12 mt-4 justify-content-center d-flex">{{ $courses->links() }}</div>
 @endsection

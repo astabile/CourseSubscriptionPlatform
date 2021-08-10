@@ -13,7 +13,7 @@ class CourseSeeder extends Seeder
     public function run()
     {
         DB::table('courses')->insert([
-            'title' => 'Master en PHP, SQL, POO, MVC, Laravel, Symfony, WordPress +',
+            'title' => 'Master in PHP, SQL, OOP, MVC, Laravel, Symfony, WordPress +',
             'picture' => 'images/1438222_0ec3_4.png',
             'price' => '12.99',
             'created_at' => date('Y-m-d H:i:s'),
@@ -21,7 +21,7 @@ class CourseSeeder extends Seeder
         ]);
 
         DB::table('courses')->insert([
-            'title' => 'Desarrollando Aplicaciones en React 17 y ASP.NET Core 5',
+            'title' => 'Developing Applications in React 17 and ASP.NET Core 5',
             'picture' => 'images/3938742_4fef_2.png',
             'price' => '14.99',
             'created_at' => date('Y-m-d H:i:s'),
@@ -29,7 +29,7 @@ class CourseSeeder extends Seeder
         ]);
 
         DB::table('courses')->insert([
-            'title' => 'Curso Maestro de Python 3: Aprende Desde Cero',
+            'title' => 'Python Master Course 3: Learn From Scratch',
             'picture' => 'images/882422_0549_11.png',
             'price' => '9.99',
             'created_at' => date('Y-m-d H:i:s'),
@@ -37,7 +37,7 @@ class CourseSeeder extends Seeder
         ]);
 
         DB::table('courses')->insert([
-            'title' => 'Universidad Angular 2021 - De Cero a Experto en Angular!',
+            'title' => 'Angular University 2021 - From Zero to Angular Expert!',
             'picture' => 'images/2105384_9a0f_15.png',
             'price' => '8.99',
             'created_at' => date('Y-m-d H:i:s'),
@@ -45,7 +45,7 @@ class CourseSeeder extends Seeder
         ]);
 
         DB::table('courses')->insert([
-            'title' => 'Curso maestro de Web Scraping: Extracción de Datos de la Web',
+            'title' => 'Web Scraping Master Course: Data Extraction from the Web',
             'picture' => 'images/2861742_c063.png',
             'price' => '16.99',
             'created_at' => date('Y-m-d H:i:s'),
@@ -53,7 +53,7 @@ class CourseSeeder extends Seeder
         ]);
 
         DB::table('courses')->insert([
-            'title' => 'Angular & Spring Boot: Creando web app full stack',
+            'title' => 'Angular & Spring Boot: Creating full stack web app',
             'picture' => 'images/1837638_4cd0_3.png',
             'price' => '17.99',
             'created_at' => date('Y-m-d H:i:s'),
@@ -61,7 +61,7 @@ class CourseSeeder extends Seeder
         ]);
 
         DB::table('courses')->insert([
-            'title' => 'Sistema de ventas en ASP.NET MVC en C# and SQL full stack',
+            'title' => 'Sales system in ASP.NET MVC in C # and SQL full stack',
             'picture' => 'images/1609328_bd24_13.png',
             'price' => '19.99',
             'created_at' => date('Y-m-d H:i:s'),
@@ -69,7 +69,7 @@ class CourseSeeder extends Seeder
         ]);
 
         DB::table('courses')->insert([
-            'title' => 'Ecommerce con ASP.NET Core 5 y React Hooks',
+            'title' => 'Ecommerce with ASP.NET Core 5 and React Hooks',
             'picture' => 'images/3914984_c244_2.png',
             'price' => '29.99',
             'created_at' => date('Y-m-d H:i:s'),
@@ -77,7 +77,7 @@ class CourseSeeder extends Seeder
         ]);
 
         DB::table('courses')->insert([
-            'title' => 'Aprende Patrones de diseño en C# Aplicados en ASP .Net',
+            'title' => 'Learn Applied C # Design Patterns in ASP .Net',
             'picture' => 'images/3940438_f419.png',
             'price' => '4.99',
             'created_at' => date('Y-m-d H:i:s'),
@@ -85,7 +85,7 @@ class CourseSeeder extends Seeder
         ]);
 
         DB::table('courses')->insert([
-            'title' => 'Master Asp.Net Core 6.0 ( ADO.NET +3 Capas+ Store Procedure)',
+            'title' => 'Master Asp.Net Core 6.0 (ADO.NET + 3 Layers + Stored Procedure)',
             'picture' => 'images/3918612_1950.png',
             'price' => '49.99',
             'created_at' => date('Y-m-d H:i:s'),

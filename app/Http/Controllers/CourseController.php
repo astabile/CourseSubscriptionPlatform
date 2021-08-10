@@ -10,7 +10,7 @@ class CourseController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index']]);
+        $this->middleware('auth', ['except' => ['show']]);
     }
 
     /**
@@ -20,16 +20,13 @@ class CourseController extends Controller
      */
     public function index()
     {
+        $user = auth()->user();
 
-        // Get last courses
-        $courses = Course::latest()->paginate(8);
+        $courses = Course::where('id', $user->id)->paginate(5);
 
-        // Toggle subscriptions
-        foreach ($courses as $course) {
-            $subscribed = ( auth()->user() ) ? auth()->user()->subscriptions->contains($course->id) : false;
-        }
-
-        return view('courses.index', compact('courses', 'subscribed'));
+        return view('courses.index')
+            ->with('courses', $courses)
+            ->with('user', $user);
     }
 
     /**
@@ -61,7 +58,10 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        //
+        // Toggle subscriptions
+        $subscribed = ( auth()->user() ) ? auth()->user()->subscriptions->contains($course->id) : false;
+        
+        return view('courses.show', compact('course', 'subscribed'));
     }
 
     /**

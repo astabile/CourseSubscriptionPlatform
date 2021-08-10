@@ -10949,7 +10949,7 @@ a.text-dark:focus {
   overflow: hidden;
 }
 
-.card .subscribed {
+.meta .subscribed {
   background-color: green;
 }
 
