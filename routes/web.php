@@ -21,4 +21,6 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/courses', 'CourseController@index');
 
+Route::post('courses/{course}', 'SubscriptionsController@update')->name('subscriptions.update');
+
 Auth::routes();

@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +24,12 @@ class CourseController extends Controller
         // Get last courses
         $courses = Course::latest()->paginate(8);
 
-        return view('courses.index', compact('courses'));
+        // Toggle subscriptions
+        foreach ($courses as $course) {
+            $subscribed = ( auth()->user() ) ? auth()->user()->subscriptions->contains($course->id) : false;
+        }
+
+        return view('courses.index', compact('courses', 'subscribed'));
     }
 
     /**

@@ -18,8 +18,7 @@
                         <p class="text-primary date">{{ $course->created_at->format('m/d/Y') }}</p>
                         <p class="text-secondary">{{ $currency . $course->price }}</p>
                     </div>
-                    <!--<a href="" class="btn btn-primary d-block font-weight-bold text-uppercase">Subscribe</a>-->
-                    <subscription-button></subscription-button>
+                    <subscription-button course-id="{{ $course->id }}" subscribed="{{ $subscribed }}"></subscription-button>
                 </div>
             </div>
         </div>
