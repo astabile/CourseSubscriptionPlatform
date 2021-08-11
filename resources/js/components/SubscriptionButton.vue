@@ -1,5 +1,5 @@
 <template>
-    <span class="btn btn-primary d-block font-weight-bold text-uppercase" @click="subscribeCourse(); changeText()" :class="{ 'subscribed' : isSubscribed }" ref="btnToggle">Subscribe</span>
+    <span class="btn btn-primary font-weight-bold text-uppercase" @click="subscribeCourse()" :class="{ 'subscribed' : isSubscribed }">{{ changeText }}</span>
 </template>
 
 <script>
@@ -22,9 +22,11 @@ export default {
                     window.location = '/login';
                     
                 });
-        }, 
-        changeText() {
-            this.$refs.btnToggle.innerText = this.isSubscribed ? 'Unsubscribe' : 'Subscribe';
+        }
+    },
+    computed: {
+        changeText: function() {
+            return this.isSubscribed ? 'Unsubscribe' : 'Subscribe';
         }
     }
 }

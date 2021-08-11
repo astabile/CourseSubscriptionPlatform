@@ -18,10 +18,10 @@ Auth::routes();
 
 Route::get('/', 'IndexController@index')->name('index.index');
 
-
+//Route::Verb(URI, Controller@Action)->name(Route Name)
 Route::get('/courses', 'CourseController@index')->name('courses.index');
+Route::get('/courses/{course}', 'CourseController@show')->name('courses.show');
 
-Route::get('courses/{course}', 'CourseController@show')->name('courses.show');
-Route::post('courses/{course}', 'SubscriptionsController@update')->name('subscriptions.update');
+Route::post('/courses/{course}', 'SubscriptionsController@update')->name('subscriptions.update');
 
 Route::get('/home', 'HomeController@index')->name('home');

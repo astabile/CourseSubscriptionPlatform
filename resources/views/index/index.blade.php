@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
-@section('styles')
-@endsection
-
 @section('content')
 @php $currency = 'USD' @endphp
 <div class="container">
@@ -11,7 +8,7 @@
         @foreach($courses as $course)
         <div class="col-md-3 mb-4">
             <a href="{{ route('courses.show', ['course' => $course->id]) }}" class="">
-                <div class="card shadow" >
+                <div class="card shadow">
                     <img src="/storage/{{ $course->picture }}" class="card-img-top" title="{{ Str::ucfirst($course->title) }}" alt="">
                     <div class="card-body">
                         <h6 class="card-title font-weight-bold">{{ Str::ucfirst($course->title) }}</h6>

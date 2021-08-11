@@ -1930,9 +1930,11 @@ __webpack_require__.r(__webpack_exports__);
         // Not authorized user or internal server error
         window.location = '/login';
       });
-    },
+    }
+  },
+  computed: {
     changeText: function changeText() {
-      this.$refs.btnToggle.innerText = this.isSubscribed ? 'Unsubscribe' : 'Subscribe';
+      return this.isSubscribed ? 'Unsubscribe' : 'Subscribe';
     }
   }
 });
@@ -37603,17 +37605,15 @@ var render = function() {
   return _c(
     "span",
     {
-      ref: "btnToggle",
-      staticClass: "btn btn-primary d-block font-weight-bold text-uppercase",
+      staticClass: "btn btn-primary font-weight-bold text-uppercase",
       class: { subscribed: _vm.isSubscribed },
       on: {
         click: function($event) {
-          _vm.subscribeCourse()
-          _vm.changeText()
+          return _vm.subscribeCourse()
         }
       }
     },
-    [_vm._v("Subscribe")]
+    [_vm._v(_vm._s(_vm.changeText))]
   )
 }
 var staticRenderFns = []
