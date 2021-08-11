@@ -7,23 +7,34 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## Clone the project and install dependencies
+## Clone the project
 - git clone git@github.com:astabile/course_subscription_platform.git
 - cd course_subscription_platform
+
+## Install dependencies
 - npm install
 - npm run dev
 
-## Create and populate schema
+- composer install
+- composer update
+
+## Create schema
+### If you are using a MySQL client
+- create the laravel database and import /app/database/laravel.sql
+
+### If you are not using a MySQL client
+- nano .bash_profile
+- export PATH=${PATH}:/usr/local/mysql/bin
+
 - mysql -uroot -p
 - create database laravel
 
+## Configure credentials and populate the schema
 - cp .env.example .env
 
 - php artisan key: generate
 - php artisan migrate
 - php artisan db:seed
-
-If you prefeer to use a MySQL client instead, just import /app/database/laravel.sql
 
 ## Run the project locally
 - php artisan serve

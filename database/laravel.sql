@@ -150,7 +150,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Alejandro', 'alejandrostabile@gmail.com', NULL, '$2y$10$8RpLcAx358W.2uAQVaEaT.u6nip2Af1AwT1PqHiim4nyJVo60P0oy', NULL, '2021-08-11 04:35:04', '2021-08-11 04:35:04'),
-(2, 'Nicolas', 'nicoprida@gmail.com', NULL, '$2y$10$yiM0QEeqf1jMnJ4yWmq3c.sfxGs1ugnmI24jV1es11Ef3NlentcNi', NULL, '2021-08-11 04:35:04', '2021-08-11 04:35:04');
+(2, 'Admin', 'email@example.com', NULL, '$2y$10$gPmTq0qZ34rX8pxgPAeRr.XI1q.6aLhS7huiyx6bHX5GOyJYAbbU.', NULL, '2021-08-11 12:18:06', '2021-08-11 12:18:06');
 
 --
 -- Índices para tablas volcadas
